@@ -1,0 +1,24 @@
+<mat-card  class="example-card" *ngIf='!deleted'>
+  
+
+    <mat-card-header>
+      
+      <mat-card-title style='font-size: small;'>Poll posted by user: {{poll.user.username}}</mat-card-title>
+      <mat-card-title style=" width: 180px;
+      word-wrap: break-word;">{{poll.question}}</mat-card-title>
+      <mat-card-subtitle style="margin-top: 5px;">{{yes}}% users voted YES</mat-card-subtitle>
+      <mat-card-subtitle>{{no}}% users voted NO</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      
+      </mat-card-content>
+    
+      <mat-card-actions style=" display: flex; justify-content: center;">
+      <div *ngIf='!mine'><button mat-raised-button color="primary" *ngIf='!voted' (click)="vote('YES')">YES</button>
+        <button mat-raised-button color="accent" *ngIf='!voted'  (click)="vote('No')">NO</button>
+      </div>
+      <mat-card-subtitle *ngIf='voted'>You already voted</mat-card-subtitle>
+      <button mat-raised-button color="warn" *ngIf=mine (click)="delete()">Delete</button>
+      </mat-card-actions>
+   
+    </mat-card>

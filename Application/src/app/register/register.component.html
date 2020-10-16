@@ -1,0 +1,38 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>Create account</p>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="User" formControlName="username" required>
+          <mat-error *ngIf="isFieldInvalid('username')">
+            Please enter your user name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('username')">
+            Please enter your password
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" formControlName="passwordConf" required>
+          <mat-error *ngIf="isFieldInvalid('username')">
+            Please confirm your password
+          </mat-error>
+        </mat-form-field>
+        <mat-radio-group formControlName="role">
+          <mat-radio-button value="admin">admin</mat-radio-button>
+          <mat-radio-button style='margin-left: 40px;' value="simple">simple</mat-radio-button>
+          <mat-error *ngIf="isFieldInvalid('role')">
+            Please select the account type
+          </mat-error>
+        </mat-radio-group> 
+        <br>
+        <button mat-raised-button style='margin-top: 50px;'  color="primary">Register</button>
+        <button mat-raised-button style='margin-left: 20px;' (click)='login()'  color="primary">Login</button>
+        
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

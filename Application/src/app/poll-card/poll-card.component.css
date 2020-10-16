@@ -1,0 +1,18 @@
+.example-card {
+  width:250px;
+  margin-left:  10px;
+  border:1px solid rgb(4, 0, 255);
+  }
+  @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+ 
+  body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  }
+  
+  .avatarImage
+  {
+
+  background-size: inherit;
+  }
+  

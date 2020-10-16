@@ -1,0 +1,11 @@
+<mat-toolbar *ngIf='isLoggedIn$  | async' color="primary">
+  <span>
+    
+    Polls App
+  </span>
+  <span class="fill-remaining-space"></span>
+  <button mat-button routerLink="home">My polls</button>
+  <button mat-button routerLink="vote">All polls</button>
+  <button *ngIf='isAdmin$  | async' mat-button  routerLink="users">User management</button>
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>

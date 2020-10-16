@@ -1,0 +1,28 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>Create new poll</p>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Question" formControlName="question" required>
+          <mat-error *ngIf="isFieldInvalid('question')">
+            Please neter your question
+          </mat-error>
+        </mat-form-field>
+       
+        <button mat-raised-button color="primary">Create</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="container-fluid">
+  <div  *ngFor="let poll of myPolls ; let i = index ;" >
+    <div>
+      <app-poll-card [mine]=true [poll]=poll></app-poll-card>>
+    </div>
+  </div>
+</div>
+
+
+
